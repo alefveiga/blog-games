@@ -1,54 +1,49 @@
-# Treinando
+# Blog Games
 
-Site estático de demonstração com lista de jogos e categorias.
+Este repositório contém um site estático que lista jogos por categorias. O conteúdo é composto por arquivos HTML, CSS, imagens e um pequeno JavaScript de interação.
 
-## Visão geral
+## Estrutura do projeto
 
-Projeto simples em HTML/CSS/JS que contém páginas de categorias, páginas de jogos, e um contato.
+- `index.html` — página principal.
+- `categorias.html` e `categorias/` — páginas de categorias.
+- `jogos/` — páginas individuais de jogos.
+- `sobre/` — página "Sobre".
+- `contato/` e `contato/contato.html` — página de contato.
+- `css/` — estilos do site.
+- `js/` — scripts JavaScript (o arquivo `main.js` foi removido).
+- `assets/` — imagens e ícones.
 
-Estrutura principal:
+## Como visualizar localmente
 
-- `index.html` — página inicial
-- `categorias.html` — página de categorias
-- `css/` — estilos
-- `js/` — scripts (inclui `main.js` e `popup.js`)
-- `jogos/` — páginas individuais dos jogos
-- `sobre/`, `contato/` — páginas institucionais
+Opções para servir os arquivos localmente (site é estático):
 
-## Como rodar localmente
+- Usando Python 3 (porta 8000):
 
-1. Abra `index.html` no seu navegador (duplo clique ou `File → Open`).
-2. Alternativamente, rode um servidor HTTP simples na raiz do projeto, por exemplo:
-
-```
-# Python 3
+```bash
 python -m http.server 8000
-
-# ou, com Node.js (serve instalado globalmente)
-npx serve .
+# então abra http://localhost:8000 no navegador
 ```
 
-E então abra `http://localhost:8000`.
+- Usando Live Server no VS Code (extensão): clique em "Go Live".
 
-## Fazer deploy no GitHub Pages
+## Deploy (GitHub Pages)
 
-1. Inicialize um repositório Git na pasta (se ainda não existir):
+O repositório já está remoto em: https://github.com/alefveiga/blog-games.git
 
-```
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin <URL-do-repositório-no-GitHub>
-git branch -M main
-git push -u origin main
-```
+Para publicar com GitHub Pages (branch `main`):
 
-2. Ative o GitHub Pages nas configurações do repositório (branch `main` / pasta `root`).
+1. Vá em `Settings` → `Pages` no GitHub.
+2. Em `Source`, selecione a branch `main` e a pasta `/ (root)`.
+3. Salve — a URL pública ficará disponível em alguns minutos.
 
-## Licença
+## O que foi alterado agora
 
-Coloque aqui a licença desejada (por exemplo, MIT) ou remova esta seção se não aplicável.
+- Removido `js/main.js` conforme solicitado.
+- Atualizado este `README.md` com instruções e estrutura do projeto.
 
-## Contato
+## Contribuições e contato
 
-Crie uma issue ou abra um pull request no repositório para sugestões/erros.
+Se quiser que eu faça mais alterações (ex.: reconstruir o script JS, otimizar imagens, configurar Actions para deploy automático), diga o que prefere.
+
+Contato: abra uma issue no repositório ou me diga aqui o que deseja mudar.
+
