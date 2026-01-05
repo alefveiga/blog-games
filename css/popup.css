@@ -1,0 +1,95 @@
+/* Popup Newsletter styles */
+:root{
+    --popup-bg: linear-gradient(135deg,#0f172a 0%, #111827 60%);
+    --accent: #ff6b6b;
+    --glass: rgba(255,255,255,0.06);
+}
+
+.popup-overlay{
+    position:fixed;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(2,6,23,0.6);
+    backdrop-filter:blur(4px);
+    visibility:hidden;
+    opacity:0;
+    transition:opacity .28s ease, visibility .28s;
+    z-index:9999;
+    padding:1.5rem;
+}
+
+.popup-overlay.visible{
+    visibility:visible;
+    opacity:1;
+}
+
+.popup{
+    width:100%;
+    max-width:520px;
+    background:var(--popup-bg);
+    color:#e6eef8;
+    border-radius:12px;
+    box-shadow:0 10px 40px rgba(2,6,23,0.6);
+    padding:1.6rem 1.6rem 1.8rem 1.6rem;
+    position:relative;
+    transform:translateY(12px) scale(.995);
+    transition:transform .28s cubic-bezier(.2,.9,.3,1);
+}
+
+.popup-overlay.visible .popup{ transform:translateY(0) scale(1); }
+
+.popup h2{ margin:0 0 .6rem 0; font-size:1.25rem; }
+.popup p{ margin:0 0 1rem 0; color:#cbd5e1; line-height:1.35 }
+
+.popup-close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:transparent;
+    border:0;
+    color:#9aa7bf;
+    font-size:1.05rem;
+    cursor:pointer;
+    padding:.35rem .5rem;
+    border-radius:8px;
+}
+.popup-close:hover{ background:rgba(255,255,255,0.03); color:#fff }
+
+form{ display:flex; gap:.6rem; align-items:center; margin-top:.4rem }
+input[type="email"]{
+    flex:1;
+    padding:.8rem .9rem;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.06);
+    background:rgba(255,255,255,0.03);
+    color:#fff;
+    outline:none;
+    font-size:.95rem;
+}
+input[type="email"]::placeholder{ color:rgba(255,255,255,0.6) }
+
+.btn-newsletter{
+    background:linear-gradient(90deg,var(--accent),#ff9666);
+    color:#081024;
+    border:0;
+    padding:.7rem .9rem;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+}
+.btn-newsletter:active{ transform:translateY(1px) }
+
+.popup-feedback{ margin-top:.8rem; color:#9ee6b5; font-size:.95rem }
+
+/* small screens */
+@media (max-width:480px){
+    .popup{ padding:1.1rem; border-radius:10px }
+    h2{ font-size:1.05rem }
+    form{ flex-direction:column; gap:.5rem }
+    .btn-newsletter{ width:100% }
+}
+
+/* prevent body scroll when popup open */
+body.no-scroll{ overflow:hidden }
